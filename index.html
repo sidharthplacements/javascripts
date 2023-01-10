@@ -2,16 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="counter">1</h1>
-    <input onclick="increment()" type="button" value="submit">
-    <input onclick="reset()" type="button" value="Reset" >
+    <div >
+        <center>
+        <h1 class="counter">1</h1>
+        <input onclick="increment()" type="button" value="increment">
+        <input onclick="decrement()" type="button" value="decrement">
+        <input onclick="reset()" type="button" value="reset" >
+    </center>
+    </div>
     <script>
         function increment() {
             var y = document.getElementsByClassName('counter')[0].innerHTML;
             document.getElementsByClassName('counter')[0].innerHTML = parseInt(y) + 1;
         }
+        function decrement() {
+            var y = document.getElementsByClassName('counter')[0].innerHTML;
+            if(parseInt(y)!=0){
+                document.getElementsByClassName('counter')[0].innerHTML = parseInt(y) - 1;
+                }
+            }
         function reset(){
             document.getElementsByClassName('counter')[0].innerHTML = 0;
         }
